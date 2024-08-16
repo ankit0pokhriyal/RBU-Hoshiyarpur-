@@ -45,7 +45,6 @@ int main() {
    // CODE HERE
  
     cout <<"The Merged Array is:\n";
-    // CODE HERE
     
     for (index = 0 ; index < n3;index++)
     {
