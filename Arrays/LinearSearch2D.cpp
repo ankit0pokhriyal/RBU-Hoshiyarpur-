@@ -30,12 +30,13 @@ int main() {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < columns; ++j) {
             if (array[i][j] == target) {
+                // Since matrix starts from postion 11,12 and so on.
                 cout << "Element found at position (" << i + 1 << ", " << j + 1 << ")." << endl;
                 found = true;
-                break; // If you want to stop after finding the first occurrence
+                break; 
             }
         }
-        if (found) break; // Break outer loop if element is found
+        if (found) break; 
     }
 
     if (!found) {
