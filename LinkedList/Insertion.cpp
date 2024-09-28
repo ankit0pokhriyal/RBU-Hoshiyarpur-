@@ -8,28 +8,80 @@ struct Node{
 Node *start = nullptr;
 
 void traverse(){
-
+  Node *ptr = start;
+  if (ptr == nullptr)
+  {
+    cout << "List is empty"<< endl;
+  }
+  while(ptr != nullptr){
+    cout << ptr->data<< "->";
+    ptr = ptr->next;
+  }
+  cout << endl;
 }
 
 void insertBeg(int num){
- 
+  // Initialize New Node 
+  // 
+  Node *new_node = new Node(num);
+  new_node-> next =start;
+  start = new_node;
 }
 void insertEnd(int num){
-
+  Node *new_node = new Node(num);
+  if (start == nullptr){
+    start = new_node;
   }
-
+  else{
+    Node *ptr = start;
+    while(ptr->next != nullptr){
+      ptr = ptr->next;
+    }
+    ptr->next = new_node;
+  }
+}
 
 void insertAfter(int num, int val)
 {
- 
+  Node *ptr = start;
+  while(ptr !=nullptr && ptr->data != val)
+  {
+    ptr = ptr->next;
+  }
+  if (ptr == nullptr){
+    cout << val<< "Not Exist"<< endl;
+    return;
+  }
+  Node *new_node  = new Node(num);
+  new_node->next = ptr->next;
+  ptr->next = new_node;
 }
 
 void insertBefore(int num, int val){
+  Node * new_node = new Node(num);
+  if (start == nullptr){
+    cout << "List is empty cannot insert before";
+    return;
+  }
+  if(start->data == val){
+    new_node -> next  = start;
+    start = new_node;
+    return;
+  }
 
+  Node *ptr = start;
+  Node *preptr = nullptr;
+  while(ptr != nullptr && ptr->data != val)
+  {
+    preptr = ptr;
+    ptr = ptr->next;
+  }
+  new_node->next  = ptr;
+  preptr->next = new_node;
 }
 // Main function to demonstrate the usage
 int main() {
-    int choice;
+    int choice, num, val;
 
     while (true) {
         cout << "\nMenu:\n";
@@ -71,5 +123,6 @@ int main() {
         }
     }
 }
+
 
 
