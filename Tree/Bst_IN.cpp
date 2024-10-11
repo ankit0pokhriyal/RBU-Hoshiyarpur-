@@ -51,11 +51,11 @@ Tree* deleteNode(Tree* root, int val) {
 
 
     // If val < root->data
-    // Recursively Move to Left
+    // Recursively store the deletion of left in root->left
     //Else if 
 
     // If val > root->data
-    // Recursively Move to Right
+    // Recursively store the deletion of right in root->Right
 
         // Node with only one child or no child
         // if root->left =nulllptr
@@ -68,13 +68,13 @@ Tree* deleteNode(Tree* root, int val) {
         // delete root
         // return temp
 
-        // Node with two children, get the in-order successor (smallest in the right subtree)
+        // Node with two children, get the in-order successor (smallest in the right subtree) store in temp
 
 
-        // Copy the in-order successor's content to this node
+        // Copy the in-order successor's content of temp into root
 
 
-        // Delete the in-order successor
+        // Delete the in-order successor i.e root->right And also temp->data and stores in root->right
     // retrurn root
 }
 
